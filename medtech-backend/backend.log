@@ -1,0 +1,52 @@
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2026-06-27T09:15:54.390+05:30  INFO 30492 --- [           main] com.medtech.MedTechApplication           : Starting MedTechApplication v0.0.1-SNAPSHOT using Java 21.0.8 with PID 30492 (S:\MedTech\medtech-backend\target\medtech-backend-0.0.1-SNAPSHOT.jar started by sjmsa in S:\MedTech\medtech-backend)
+2026-06-27T09:15:54.392+05:30  INFO 30492 --- [           main] com.medtech.MedTechApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-06-27T09:15:55.354+05:30  INFO 30492 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-06-27T09:15:55.420+05:30  INFO 30492 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 7 JPA repository interfaces.
+2026-06-27T09:15:56.255+05:30  INFO 30492 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-06-27T09:15:56.287+05:30  INFO 30492 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-27T09:15:56.287+05:30  INFO 30492 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2026-06-27T09:15:56.359+05:30  INFO 30492 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-27T09:15:56.363+05:30  INFO 30492 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1891 ms
+2026-06-27T09:15:56.722+05:30  INFO 30492 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-06-27T09:15:56.821+05:30  INFO 30492 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2026-06-27T09:15:56.846+05:30  INFO 30492 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-06-27T09:15:57.237+05:30  INFO 30492 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-06-27T09:15:57.278+05:30  INFO 30492 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-06-27T09:15:57.462+05:30  INFO 30492 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@63c99f7
+2026-06-27T09:15:57.470+05:30  INFO 30492 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-06-27T09:15:57.519+05:30  WARN 30492 --- [           main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-06-27T09:15:58.328+05:30  INFO 30492 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    alter table bookings 
+       modify column notes TEXT
+Hibernate: 
+    alter table notifications 
+       modify column message TEXT not null
+Hibernate: 
+    alter table sos_requests 
+       modify column message TEXT
+Hibernate: 
+    alter table users 
+       add column reset_token varchar(255)
+Hibernate: 
+    alter table users 
+       add column reset_token_expiry datetime(6)
+2026-06-27T09:15:58.533+05:30  INFO 30492 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-06-27T09:15:59.020+05:30  INFO 30492 --- [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsServiceImpl
+2026-06-27T09:15:59.095+05:30  INFO 30492 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-06-27T09:15:59.753+05:30  WARN 30492 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-06-27T09:16:00.169+05:30  INFO 30492 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7334dcbe, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1ca876b7, org.springframework.security.web.context.SecurityContextHolderFilter@42bb0492, org.springframework.security.web.header.HeaderWriterFilter@7c6f91d2, org.springframework.web.filter.CorsFilter@36ba9aa3, org.springframework.security.web.authentication.logout.LogoutFilter@6d821475, com.medtech.security.JwtAuthFilter@f5b4ca6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4377b35b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@104972a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54d5500e, org.springframework.security.web.session.SessionManagementFilter@3d123d10, org.springframework.security.web.access.ExceptionTranslationFilter@b31cd6b, org.springframework.security.web.access.intercept.AuthorizationFilter@1fce17b8]
+2026-06-27T09:16:00.559+05:30  INFO 30492 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-06-27T09:16:00.568+05:30  INFO 30492 --- [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Starting...
+2026-06-27T09:16:00.570+05:30  INFO 30492 --- [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [org.springframework.messaging.simp.broker.DefaultSubscriptionRegistry@118932fe]]
+2026-06-27T09:16:00.570+05:30  INFO 30492 --- [           main] o.s.m.s.b.SimpleBrokerMessageHandler     : Started.
+2026-06-27T09:16:00.577+05:30  INFO 30492 --- [           main] com.medtech.MedTechApplication           : Started MedTechApplication in 6.714 seconds (process running for 7.229)
